@@ -12,24 +12,7 @@
     name: grafana
     state: installed
 
-#- name: Copy datasource
-#  ansible.builtin.template:
-#    src: prom-datasource.yml
-#    dest: /etc/grafana/provisioning/datasources/prom.yml
-#
-#- name: Create a folder
-#  community.grafana.grafana_folder:
-#    url: http://localhost:3000
-#    grafana_user: "{{secrets.grafana_user}}"
-#    grafana_password: "{{secrets.grafana_password}}"
-#    title: "ProjectDashboards"
-#    state: present
 
-#- name: Include task list in play
-#  ansible.builtin.include_tasks:
-#    file: import-dashboard.yml
-#  loop:
-#    - node-exporter
 
 
 
@@ -39,4 +22,4 @@
     state: restarted
     enabled: yes
 
-#glndo
+#glndoj
