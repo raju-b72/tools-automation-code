@@ -1,0 +1,42 @@
+- name: Set Prompt
+  ansible.builtin.shell: set-prompt grafana
+
+- name: Copy grafana repo file
+  ansible.builtin.template:
+    src: grafana.repo
+    dest: /etc/yum.repos.d/grafana.repo
+
+
+- name: Install the latest version Grafana
+  ansible.builtin.dnf:
+    name: grafana
+    state: installed
+
+#- name: Copy datasource
+#  ansible.builtin.template:
+#    src: prom-datasource.yml
+#    dest: /etc/grafana/provisioning/datasources/prom.yml
+#
+#- name: Create a folder
+#  community.grafana.grafana_folder:
+#    url: http://localhost:3000
+#    grafana_user: "{{secrets.grafana_user}}"
+#    grafana_password: "{{secrets.grafana_password}}"
+#    title: "ProjectDashboards"
+#    state: present
+
+#- name: Include task list in play
+#  ansible.builtin.include_tasks:
+#    file: import-dashboard.yml
+#  loop:
+#    - node-exporter
+
+
+
+- name: Start Grafana
+  ansible.builtin.systemd_service:
+    name: grafana-server
+    state: restarted
+    enabled: yes
+
+#glndo
