@@ -38,30 +38,3 @@
     chdir: /home/ec2-user/github-runner
 
 
-
-- name: Disable default NodeJS Version Module
-  ansible.builtin.shell: dnf module disable nodejs -y
-
-- name: Enable NodeJS Module for V20
-  ansible.builtin.shell: dnf module disable nodejs -y
-
-- name: Install NodeJS
-  ansible.builtin.dnf:
-    name: nodejs
-    state: latest
-
-- name: Install Java
-  ansible.builtin.dnf:
-    name: java-17-openjdk
-    state: installed
-
-- name: Download Sonarqube
-  ansible.builtin.unarchive:
-    src: https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-5.0.1.3006-linux.zip
-    dest: /opt
-    remote_src: yes
-
-- name: Install Zip
-  ansible.builtin.dnf:
-    name: zip
-    state: installed
