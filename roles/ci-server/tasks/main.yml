@@ -20,10 +20,10 @@
 
 #- name: debug
 #  ansible.builtin.s hell: "echo{{ lookup('ansible.builtin.env', 'vault_token') }}"
-- name: Start Runner
-  ansible.builtin.shell: ./svc.sh uninstall
-  args:
-    chdir: /home/ec2-user/github-runner
+#- name: Start Runner
+#  ansible.builtin.shell: ./svc.sh uninstall
+#  args:
+#    chdir: /home/ec2-user/github-runner
 
 
 - name: Install Runner
