@@ -9,7 +9,7 @@ pipelines:
         auto_update: true
         branch: main
     secure_variables:
-      vault_token: AES:II3GazUX2Axs2MyxWBR93w==:O8SLtfHszWHwMSov2wQnaubhnJUhUKuQuynl/I7u7S8=
+      vault_token: AES:XQXBx+WVA/j8RJTMqkVqzg==:9HiHHB9N6dozNj2oBE9prMPjRbgqyhvF2TXiR+0YqB4=
     stages:
       - Ansible:
           fetch_materials: true
