@@ -3,14 +3,6 @@
     name: python-jenkins
     executable: pip3.9
 
-- name: Create Job xml file
-  ansible.builtin.template:
-    src: jobs/pipelines.xml
-    dest: /tmp/{{item}}.xml
-  loop:
-    - frontend
-    - backend
-
 
 - name: Create Jobs
   community.general.jenkins_job:
