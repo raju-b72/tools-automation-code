@@ -28,6 +28,10 @@ variable "tools" {
       instance_type = "t3.large"
       policy_resource_list = []
     }
+    jenkins = {
+      instance_type = "t3.large"
+      policy_resource_list = []
+    }
   }
 }
 
