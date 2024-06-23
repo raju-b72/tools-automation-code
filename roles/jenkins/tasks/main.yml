@@ -25,8 +25,7 @@
     dest: /var/lib/jenkins/init.groovy.d/{{item}}.groovy
   loop:
     - 01-wizard
-    - 02-admin-user
-    - 03-plugins
+
 
 
 - name: Start Jenkins Service
